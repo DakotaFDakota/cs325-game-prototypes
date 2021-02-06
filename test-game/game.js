@@ -69,10 +69,10 @@ this.anims.create({
 });
 
 //cursors = this.input.keyboard.createCursorKeys();
-//this.arrowKey = this.input.keyboard.createCursorKeys();
-this.keyLeft = this.input.keyboard.addKey(Phaser.KeyCode.A);
-this.keyRight = this.input.keyboard.addKey(Phaser.KeyCode.D);
-this.keyUp = this.input.keyboard.addKey(Phaser.KeyCode.W);
+this.arrowKey = this.input.keyboard.createCursorKeys();
+//this.keyLeft = this.input.keyboard.addKey(Phaser.KeyCode.A);
+//this.keyRight = this.input.keyboard.addKey(Phaser.KeyCode.D);
+//this.keyUp = this.input.keyboard.addKey(Phaser.KeyCode.W);
 
 
 stars = this.physics.add.group({
@@ -126,14 +126,14 @@ function update() {
   //}
 
 
-  if (this.arrowKey.KeyLeft.isDown)
+  if (this.arrowKey.left.isDown)
   {
       player.setVelocityX(-160);
       console.log('left key pressed');
 
       player.anims.play('left', true);
   }
-  else if (this.arrowKey.keyRight.isDown)
+  else if (this.arrowKey.right.isDown)
   {
       player.setVelocityX(160);
       console.log('right key pressed');
@@ -147,12 +147,50 @@ function update() {
       player.anims.play('turn');
   }
 
-  if (this.cursors.KeyUp.isDown && player.body.touching.down)
+  if (this.cursors.up.isDown && player.body.touching.down)
   {
       player.setVelocityY(-330);
       console.log('up key pressed');
   }
 
+  function collectStar (player, star)
+  {
+      star.disableBody(true, true);
+
+      //  Add and update the score
+      score += 10;
+      scoreText.setText('Score: ' + score);
+
+      if (stars.countActive(true) === 0)
+      {
+          //  A new batch of stars to collect
+          stars.children.iterate(function (child) {
+
+              child.enableBody(true, child.x, 0, true, true);
+
+          });
+
+          var x = (player.x < 400) ? Phaser.Math.Between(400, 800) : Phaser.Math.Between(0, 400);
+
+          var bomb = bombs.create(x, 16, 'bomb');
+          bomb.setBounce(1);
+          bomb.setCollideWorldBounds(true);
+          bomb.setVelocity(Phaser.Math.Between(-200, 200), 20);
+          bomb.allowGravity = false;
+
+      }
+  }
+
+  function hitBomb (player, bomb)
+  {
+      this.physics.pause();
+
+      player.setTint(0xff0000);
+
+      player.anims.play('turn');
+
+      gameOver = true;
+  }
 
 
 

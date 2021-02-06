@@ -122,7 +122,7 @@ function update() {
   //}
 
 
-  if (arrowKey.right.isDown))
+  if (arrowKey.right.isDown)
   {
       player.setVelocityX(-160);
       console.log('left key pressed');

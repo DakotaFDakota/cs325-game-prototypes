@@ -69,7 +69,7 @@ this.anims.create({
 });
 
 //cursors = this.input.keyboard.createCursorKeys();
-arrowKey = this.input.keyboard.createCursorKeys();
+this.arrowKey = this.input.keyboard.createCursorKeys();
 
 
 stars = this.physics.add.group({

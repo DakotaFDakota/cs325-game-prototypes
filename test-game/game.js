@@ -113,11 +113,11 @@ function update() {
     player.anims.play('turn');
   }
 
-  if (cursor.up.isDown && player.body.touching.down) {
+  if (cursors.up.isDown && player.body.touching.down) {
     player.setVelocityY(-330);
   }
 
-  
+
 
 
 

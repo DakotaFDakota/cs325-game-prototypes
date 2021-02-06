@@ -1,6 +1,3 @@
-
-
-
 var config = {
   type: Phaser.AUTO,
   width: 800,
@@ -101,12 +98,12 @@ function update() {
   }
 
   if (cursors.left.isDown){
-    player.setVelocityX(-160);
+    player.body.velocity.x = -160;
 
     player.anims.play('left', true);
   }
   else if (cursors.right.isDown) {
-    layer.setVelocityX(160);
+    layer..body.velocity.x = 160;
 
     player.anims.play('right', true)
   }

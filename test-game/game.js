@@ -67,7 +67,9 @@ this.anims.create({
   repeat: -1
 });
 
+//cursors = this.input.keyboard.createCursorKeys();
 cursors = this.input.keyboard.createCursorKeys();
+
 
 stars = this.physics.add.group({
   key: 'star',
@@ -97,28 +99,52 @@ function update() {
     return;
   }
 
-  player.body.velocity.x = 0;
+  //player.body.velocity.x = 0;
 
-  if (this.input.keyboard.isDown(Phaser.Keyboard.LEFT)){
-    player.setVelocityX(-160);
+  //if (this.input.keyboard.isDown(Phaser.Keyboard.LEFT)){
+  //  player.setVelocityX(-160);
 
     //player.anims.play('left', true);
-  }
-  else if (this.input.keyboard.isDown(Phaser.Keyboard.RIGHT)) {
-    player.setVelocityX(160);
+  //}
+  //else if (this.input.keyboard.isDown(Phaser.Keyboard.RIGHT)) {
+  //  player.setVelocityX(160);
 
     //player.anims.play('right', true)
-  }
-  else {
-    player.setVelocityX(0);
+  //}
+  //else {
+    //player.setVelocityX(0);
 
     //player.anims.play('turn');
+  //}
+
+  //if (cursors.up.isDown && player.body.touching.down) {
+  //  player.body.velocity.y = -330;
+  //}
+
+
+  if (cursors.left.isDown)
+  {
+      player.setVelocityX(-160);
+
+      player.anims.play('left', true);
+  }
+  else if (cursors.right.isDown)
+  {
+      player.setVelocityX(160);
+
+      player.anims.play('right', true);
+  }
+  else
+  {
+      player.setVelocityX(0);
+
+      player.anims.play('turn');
   }
 
-  if (cursors.up.isDown && player.body.touching.down) {
-    player.body.velocity.y = -330;
+  if (cursors.up.isDown && player.body.touching.down)
+  {
+      player.setVelocityY(-330);
   }
-
 
 
 

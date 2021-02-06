@@ -146,7 +146,7 @@ function update() {
       player.setVelocityY(-330);
   }
 
-
+var x = (player.x < 400) ? Phaser.Math.Between(400, 800) : Phaser.Math.Between(0, 400);
 
 
 

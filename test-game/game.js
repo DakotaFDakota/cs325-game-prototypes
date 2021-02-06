@@ -124,13 +124,17 @@ function update() {
 
   if (cursors.left.isDown)
   {
+      console.log('pre');
       player.setVelocityX(-160);
+      console.log('left key pressed');
 
       player.anims.play('left', true);
   }
   else if (cursors.right.isDown)
   {
+      console.log('pre');
       player.setVelocityX(160);
+      console.log('right key pressed');
 
       player.anims.play('right', true);
   }
@@ -143,7 +147,9 @@ function update() {
 
   if (cursors.up.isDown && player.body.touching.down)
   {
+      console.log('pre');
       player.setVelocityY(-330);
+      console.log('up key pressed');
   }
 
 var x = (player.x < 400) ? Phaser.Math.Between(400, 800) : Phaser.Math.Between(0, 400);

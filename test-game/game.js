@@ -21,6 +21,7 @@ var stars;
 var bombs;
 var platforms;
 //var cursors;
+var arrowKey;
 var score = 0;
 var gameOver = false;
 var scoreText;
@@ -68,7 +69,7 @@ this.anims.create({
 });
 
 //cursors = this.input.keyboard.createCursorKeys();
-arrowKey = game.input.keyboard.createCursorKeys();
+arrowKey = this.input.keyboard.createCursorKeys();
 
 
 stars = this.physics.add.group({
@@ -149,7 +150,6 @@ function update() {
       console.log('up key pressed');
   }
 
-var x = (player.x < 400) ? Phaser.Math.Between(400, 800) : Phaser.Math.Between(0, 400);
 
 
 

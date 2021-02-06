@@ -103,7 +103,7 @@ function update() {
     player.anims.play('left', true);
   }
   else if (cursors.right.isDown) {
-    layer..body.velocity.x = 160;
+    player.body.velocity.x = 160;
 
     player.anims.play('right', true)
   }
@@ -114,7 +114,7 @@ function update() {
   }
 
   if (cursors.up.isDown && player.body.touching.down) {
-    player.setVelocityY(-330);
+    player.body.velocity.y = -330;
   }
 
 

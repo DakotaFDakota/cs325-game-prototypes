@@ -100,12 +100,12 @@ function update() {
   player.body.velocity.x = 0;
 
   if (this.input.keyboard.isDown(Phaser.Keyboard.LEFT)){
-    player.body.velocity.x = -160;
+    player.setVelocityX(-160);
 
-    player.anims.play('left', true);
+    //player.anims.play('left', true);
   }
   else if (this.input.keyboard.isDown(Phaser.Keyboard.RIGHT)) {
-    player.body.velocity.x = 160;
+    player.setVelocityX(160);
 
     //player.anims.play('right', true)
   }

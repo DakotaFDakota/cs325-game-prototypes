@@ -40,7 +40,7 @@ function create() {
 
 this.add.image(400, 300, 'sky')
 
-platforms = game.physics.add.staticGroup();
+platforms = this.physics.add.staticGroup();
 
 platforms.create(400,568, 'ground').setScale(2).refreshBody();
 
@@ -48,7 +48,7 @@ platforms.create(600, 400, 'ground');
 platforms.create(50, 250, 'ground');
 platforms.create(750, 220, 'ground');
 
-player = game.physics.add.sprite(100,450, 'dude');
+player = this.physics.add.sprite(100,450, 'dude');
 
 player.setBounce(0.2);
 player.setCollideWorldBounds(true);
@@ -67,7 +67,7 @@ this.anims.create({
   repeat: -1
 });
 
-cursors = game.input.keyboard.createCursorKeys();
+cursors = this.input.keyboard.createCursorKeys();
 
 stars = this.physics.add.group({
   key: 'star',
@@ -84,12 +84,12 @@ stars.children.iterate(function (child) {
 
 bombs = this.physics.add.group();
 
-game.physics.add.collider(player, platforms);
-game.physics.add.collider(stars, platforms);
-game.physics.add.collider(bombs, platforms);
+this.physics.add.collider(player, platforms);
+this.physics.add.collider(stars, platforms);
+this.physics.add.collider(bombs, platforms);
 
-game.physics.add.overlap(player, stars, collectStar, null, this);
-game.physics.add.collider(player, bombs, hitBomb, null, this);
+this.physics.add.overlap(player, stars, collectStar, null, this);
+this.physics.add.collider(player, bombs, hitBomb, null, this);
 }
 
 function update() {

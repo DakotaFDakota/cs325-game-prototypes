@@ -122,9 +122,8 @@ function update() {
   //}
 
 
-  if (cursors.left.isDown)
+  if (this.input.keyboard.on('keydown_w', ))
   {
-      console.log('pre');
       player.setVelocityX(-160);
       console.log('left key pressed');
 
@@ -132,7 +131,6 @@ function update() {
   }
   else if (cursors.right.isDown)
   {
-      console.log('pre');
       player.setVelocityX(160);
       console.log('right key pressed');
 
@@ -147,7 +145,6 @@ function update() {
 
   if (cursors.up.isDown && player.body.touching.down)
   {
-      console.log('pre');
       player.setVelocityY(-330);
       console.log('up key pressed');
   }

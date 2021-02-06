@@ -69,7 +69,10 @@ this.anims.create({
 });
 
 //cursors = this.input.keyboard.createCursorKeys();
-this.arrowKey = this.input.keyboard.createCursorKeys();
+//this.arrowKey = this.input.keyboard.createCursorKeys();
+this.keyLeft = this.input.keyboard.addKey(Phaser.KeyCode.A);
+this.keyRight = this.input.keyboard.addKey(Phaser.KeyCode.D);
+this.keyUp = this.input.keyboard.addKey(Phaser.KeyCode.W);
 
 
 stars = this.physics.add.group({
@@ -123,14 +126,14 @@ function update() {
   //}
 
 
-  if (arrowKey.right.isDown)
+  if (this.arrowKey.KeyLeft.isDown)
   {
       player.setVelocityX(-160);
       console.log('left key pressed');
 
       player.anims.play('left', true);
   }
-  else if (arrowKey.left.isDown)
+  else if (this.arrowKey.keyRight.isDown)
   {
       player.setVelocityX(160);
       console.log('right key pressed');
@@ -144,7 +147,7 @@ function update() {
       player.anims.play('turn');
   }
 
-  if (cursors.up.isDown && player.body.touching.down)
+  if (this.cursors.KeyUp.isDown && player.body.touching.down)
   {
       player.setVelocityY(-330);
       console.log('up key pressed');

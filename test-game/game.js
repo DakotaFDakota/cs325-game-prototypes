@@ -20,7 +20,7 @@ var player;
 var stars;
 var bombs;
 var platforms;
-var cursors;
+//var cursors;
 var score = 0;
 var gameOver = false;
 var scoreText;
@@ -68,7 +68,7 @@ this.anims.create({
 });
 
 //cursors = this.input.keyboard.createCursorKeys();
-cursors = this.input.keyboard.createCursorKeys();
+arrowKey = game.input.keyboard.createCursorKeys();
 
 
 stars = this.physics.add.group({
@@ -122,14 +122,14 @@ function update() {
   //}
 
 
-  if (this.input.keyboard.on('keydown_w', ))
+  if (arrowKey.right.isDown))
   {
       player.setVelocityX(-160);
       console.log('left key pressed');
 
       player.anims.play('left', true);
   }
-  else if (cursors.right.isDown)
+  else if (arrowKey.left.isDown)
   {
       player.setVelocityX(160);
       console.log('right key pressed');

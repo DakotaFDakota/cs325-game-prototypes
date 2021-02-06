@@ -67,7 +67,7 @@ this.anims.create({
   repeat: -1
 });
 
-cursors = this.input.keyboard.createCursorKeys();
+cursors = game.input.keyboard.createCursorKeys();
 
 stars = this.physics.add.group({
   key: 'star',

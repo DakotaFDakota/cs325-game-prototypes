@@ -1,0 +1,52 @@
+{
+    "anims": [
+        {
+            "key": "pirate_idle",
+            "type": "frames",
+            "repeat": -1,
+            "frameRate": 12,
+            "frames": [
+                {
+                    "key": "pirate",
+                    "frame": "pirate_idle_1"
+                },
+                {
+                    "key": "pirate",
+                    "frame": "pirate_idle_2"
+                },
+                {
+                    "key": "pirate",
+                    "frame": "pirate_idle_3"
+                },
+                {
+                    "key": "pirate",
+                    "frame": "pirate_idle_4"
+                }
+            ]
+        },
+        {
+            "key": "pirate_walk",
+            "type": "frames",
+            "repeat": -1,
+            "frameRate": 12,
+            "frames": [
+                {
+                    "key": "pirate",
+                    "frame": "pirate_walk_1"
+                },
+                {
+                    "key": "pirate",
+                    "frame": "pirate_walk_2"
+                },
+                {
+                    "key": "pirate",
+                    "frame": "pirate_walk_3"
+                },
+                {
+                    "key": "pirate",
+                    "frame": "pirate_walk_4"
+                }
+            ]
+        }
+    ]
+}

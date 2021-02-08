@@ -1,8 +1,10 @@
-export default class Player extends Phaser.Physics.Matter.Sprite {
+import MatterEntity from "./MatterEntity.js";
+
+export default class Player extends MatterEntity {
     constructor(data){
         let{scene, x, y, texture, frame} = data;
-        super(scene.matter.world, x, y, texture, frame);
-        this.scene.add.existing(this);
+        super({...data, health: 2, name:'player'});
+        this.touching = [];
     
         const {Body, Bodies} = Phaser.Physics.Matter.Matter;
         var playerCollider = Bodies.circle(this.x, this.y, 12, {isSensor: false, label:'playerCollider'});
@@ -12,16 +14,15 @@ export default class Player extends Phaser.Physics.Matter.Sprite {
         frictionAir: 0.35,
         });
         this.setExistingBody(compoundBody);
+        this.CreateLaserCollision(playerCollider);
         this.setFixedRotation();
 }   
     static preload(scene){
         scene.load.atlas('pirate', 'assets/pirate.png', 'assets/pirate_atlas.json');
         scene.load.animation('pirate_anim', 'assets/pirate_anim.json');
+        scene.load.audio('playerinjur', 'assets/audio/playeyinjur.wav')
     }
 
-    get velocity(){
-        return this.body.velocity;
-    }
 
     update(){
         const speed = 2.5;
@@ -45,6 +46,36 @@ export default class Player extends Phaser.Physics.Matter.Sprite {
         else{
             this.anims.play('pirate_idle', true);
         }
+
+        //fireWeapon() {
+            //let pointer = this.scene.input.activePointer;
+            //if(pointer.isDown) {
+                //fireweapon
+           // }else{
+                //stopfire
+            //}
+
+        //}
+
+}
+
+CreateLaserCollision(playerCollider) {
+    this.scene.matterCollision.addOnCollideStart({
+        objectA: [playerCollider],
+        callback: other => {
+            if(other.gameObjectB && other.gameObjectB.pickup) other.gameObjectB.pickup();
+        },
+        context: this.scene,
+
+    });
+
+    this.scene.matterCollision.addOnCollideEnd({
+        objectA:[playerCollider],
+        callback: other => {
+            if(other.gameObjectB && other.gameObjectB.pickup) other.gameObjectB.pickup();
+        },
+        context: this.scene,
+    });
 
 }
 

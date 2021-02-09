@@ -20,7 +20,7 @@ export default class Player extends MatterEntity {
     static preload(scene){
         scene.load.atlas('pirate', 'assets/pirate.png', 'assets/pirate_atlas.json');
         scene.load.animation('pirate_anim', 'assets/pirate_anim.json');
-        scene.load.audio('playerinjur', 'assets/audio/playeyinjur.wav')
+        scene.load.audio('playerinjur', 'assets/audio/playerinjur.wav')
     }
 
 
@@ -37,6 +37,7 @@ export default class Player extends MatterEntity {
         } else if (this.inputKeys.down.isDown){
             playerVelocity.y = 1;
         }
+        this.setFlipX(this.velocity.x<0);
         playerVelocity.normalize();
         playerVelocity.scale(speed);
         this.setVelocity(playerVelocity.x, playerVelocity.y);

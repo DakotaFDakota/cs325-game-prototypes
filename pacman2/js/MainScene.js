@@ -41,7 +41,6 @@ export default class MainScene extends Phaser.Scene{
 
     update(){
     this.player.update();
-    //this.knight.forEach(knight => knight.update());
     this.knight1.update();
     this.knight2.update();
     this.knight3.update();

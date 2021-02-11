@@ -1,19 +1,20 @@
+import InventoryScene from "./InventoryScene.js";
 import MainScene from "./MainScene.js";
 
 const config = {
     width: 512,
     height: 512,
     backgroundColor: '#333333',
-    type: Phaser.AUTO,
+    type: Phaser.ARCADE,
     parent: 'pacman2',
-    scene: [MainScene],
+    scene: [MainScene, InventoryScene],
     scale: {
         zoom: 2,
     },
     physics: {
         default: 'matter',
         matter: {
-            debug: true,
+            debug: false,
             gravity:{y:0},
         }
     },

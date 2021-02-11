@@ -1,3 +1,6 @@
+//import Inventory from "./Inventory.js";
+
+
 export default class Gun extends Phaser.Physics.Matter.Sprite {
     constructor(data){
         let{scene, x, y, texture, frame} = data;
@@ -7,6 +10,9 @@ export default class Gun extends Phaser.Physics.Matter.Sprite {
         var circleCollider = Bodies.circle(this.x, this.y, 10, {isSensor: false, label: 'collider'});
         this.setExistingBody(circleCollider);
         this.setFrictionAir(1);
+        this.name = 'phaser';
+        //this.frame = 12;
+
         //this.sound = this.scene.add('shooting');
         //this.name = gun;
 }   
@@ -16,6 +22,7 @@ export default class Gun extends Phaser.Physics.Matter.Sprite {
 
     pickup = () => {
         this.destroy();
+        //console.log("item pickup");
         //this.sound.play();
         return true;
     }

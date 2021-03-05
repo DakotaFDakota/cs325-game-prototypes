@@ -12,6 +12,7 @@ export default class MainScene extends Phaser.Scene{
     
 
     preload(){
+        //adds cart and map
         this.load.image('cart', 'assets/Shopping_Cart.png');
         this.load.image('lotmap', 'assets/lotmap.png');
       }

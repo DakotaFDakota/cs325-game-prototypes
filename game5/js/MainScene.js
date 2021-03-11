@@ -46,8 +46,6 @@ export default class MainScene extends Phaser.Scene{
     }
 
     buttonclick(image){
-        //this.rotating.play();
-        //Phaser.Actions.RotateAroundDistance(this.arrowimage, {x:100, y: 100}, 0.02, 5);
         this.arrowimage.angle += Math.random() * Math.floor(500);
         console.log('rotating');
     }
@@ -84,23 +82,6 @@ export default class MainScene extends Phaser.Scene{
         this.cowsound = this.sound.add('cowaudio');
         this.elephantsound = this.sound.add('elephantaudio');
         this.roostersound = this.sound.add('roosteraudio');
-        this.monkeysound = this.sound.add('monkeyaudio');
-
-        //this.arrowimage.anchor.setTo(400, 30)
-
-        //Phaser.Physics.Matter.Matter.Body.setAngularVelocity(this.arrowimage, 10);
-        
-
-        this.rotating = this.tweens.add({
-            targets: this.arrowimage,
-            //rotation: rad,
-            duration: 200
-        });
-        
-    }
-   
-
-    update(){
-        
+        this.monkeysound = this.sound.add('monkeyaudio');        
     }
 }

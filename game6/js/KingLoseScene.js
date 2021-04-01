@@ -40,7 +40,7 @@ export default class KingLoseScene extends Phaser.Scene{
         sedona.play();
 
 
-        this.option1.on('pointerdown', () => this.scene.start("MenuScene", {cb: this.crowbar}));
+        this.option1.on('pointerdown', () => this.scene.start("MainScene", {cb: this.crowbar}));
 
     }
 

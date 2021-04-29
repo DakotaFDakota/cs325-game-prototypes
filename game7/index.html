@@ -26,74 +26,78 @@
 
 <ul>
 <li><strong>Link to Game on ITCH:</strong>
-<ul>Link:<a href="https://dferris216.itch.io/thechickenfarmer">ITCH.IO</a></ul>
+<ul>Link to game:<a href="https://dferris216.itch.io/thechickenfarmer">ITCH.IO</a></ul>
 </li>
 <li><strong>Originality:</strong>
-The game is based on my first iteration. 
+This game has Pokemon style fights, but the interaction with the world is a first person style.
 </li>
 
 <li><strong>Technical Merit:</strong>
-I added the ability to add player names.  Player names and health are displayed on the screen and update as players take damage.
-<ul>Player names now appear in the text rather than "player 1"</a></ul>
-<ul>The fight scene against the king considers player health, player weapons, and randomness to decide if they win or lose</a></ul>
-<ul>Before, the king fight scene was dependend on the first or section option</a></ul>
+The game switches between 2D and 3D.
+<ul>The game generates the appropriate character depending on which one you interact with.</a></ul>
+<ul>The health bar has smooth decrease</a></ul>
+<ul>The text is added like its being typed, rather than just appearing</a></ul>
+<ul>The menus can be navigated using the arrow keys and space bar with the highlighted text, rather than just clicked on</a></ul>
+<ul>I had to learn C# as unity scripts are all in C# and I knew no C#</a></ul>
 </li>
 
 <li><strong>Prototype Postmortem:</strong>
-I wanted to add gifs or short videos like in the Oregon Trail where scenes have short gifs that play. 
-<ul>It seems gifs are not supported by phaser or at least that's what I could find. </a></ul>
-<ul>I could have added a video but I could not find a video that worked for my needs.</a></ul>
+I would have liked to add 3D and 2D animations
+<ul>I spent too much time on the 2D fight scene and not enough on the first person/ 3D aspect of the game</a></ul>
 </li>
 
 <li><strong>Prototype Assets:</strong>
-Assets are the same as the last iteration with the exception of the cobra.
-<ul>Cobra<a href="https://www.pngfind.com/download/omJwoh_600-x-600-1-transparent-background-cartoon-cobra/">Picture</a></ul>
+The assets are from the unity asset store.
 </li>
 
 <li><strong>Prototype Closest Other Game:</strong>
-This game style is based on the Organ Trail.  The other game that is similar to this is the previous iteration.
+This game is based on Pokemon, at least in terms of the fight scenes.
 </li>
 
 <li><strong>High Concept:</strong>
-A group of travelers travels throught an mall in Sedona, Arizona trying to find food and survive the Mall.
-</li>
-
-<li><strong>Theme:</strong>
-Challenge (theme) used: Multiple Players required to play.
+You play a farmer who is trying to get their chickens back from the animals that stole them.
 </li>
 
 <li><strong>Prototype Goal:</strong>
-This iteration I got player names and player health to work, as well as displaying the players names and health on each scene.
+Honestly producing anything in Unity was my goal.  This was my first attempt at anything Unity so with this game I just wanted to learn.
 </li>
 
 <li><strong>Player Experience Goals:</strong>
-Players should begin to understand the story and think through each of their decisons.  
+Player should fight the enemy animals and get back their chickens.
 </li>
 
 <li><strong>Gameplay:</strong>
-Two to four players are required.  Players assign themselves a number between one and four.  Players begin with a health of three.  If a player takes damage, they take one damage point.
-<ul>The players have to agree on an option before proceeding, on one player should make the decision.</a></ul>
+Players use WASD and mouse to move the FP model and arrow keys and space to navigate the 2D menus
+<ul>Player also uses F to interact with 3D objects</a></ul>
+<ul>Player interacts with the animals to fight them and destrying all 3 gets their chickens back</a></ul>
 </li>
 
 <li><strong>Strategies:</strong>
-Players should take their time and consider their options.
+Players should mix up the moves they get to do the most damage.
 </li>
 
 <li><strong>Story/Setting/Premise:</strong>
-The game takes place in Sedona, Arizona with a group of travelers in search for food.  They discover a mall they believed to be abandonded, but rather encourter a tribe that they must face off with.
+The game takes place on a farm with a farmer who is trying to get their chickens back from the evil animals that stole them.
 </li>
 
 <li><strong>Target Audience:</strong>
-Players who enjoy a simplistic game with an enjoyable and original storyline.
+Players who want an easy to play game that does not require a great deal of work.  Players can relax and play. 
 </li>
 
 <li><strong>Play Time:</strong>
-Play time is between 5 and 20 minutes.
+Play time is between 5 and 10 minutes.
 </li>
-<li><strong>Version: 2.0.0</strong>
+<li><strong>Version: 1.0.0</strong>
 </li>
 <li><strong>Known Bugs</strong>
-Options with long text have to be clicked on the bottom row of the text. Clicking on the top rows of the text do nothing.
+The first fight, the text does not display correctly.  It overlays the text from two menus at once. After this fight, it is fixed.  Just click space to fight and it will fix itself.
+</li>
+
+<li><strong>Unity over Phaser</strong>
+I chose to try Unity over phaser for this iteration because I have heard very good things about Unity, but never had an oppurtunity to try to make a game with it. This was that oppurtunity.
+<ul>I think Unity's strenght is how powerful it is, able to do 3D rendering, however, it is much more complicated to learn, even simple things.</a></ul>
+<ul>Unity is also more difficult to export, at least to github. I had issues with the filesize being too big and spent over 2 hours trying to repair my github after I broke everything</a></ul>
+<ul>Uploading to itch.io fixed some issues, but does not change the fact that unity is not suited well for some web based purposes</a></ul>
 </li>
 
 </ul>
